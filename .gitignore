@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

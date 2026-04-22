@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bot Control Portal</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="kicker">Mineflayer Control</p>
+        <h1>Bot Portal</h1>
+        <p class="sub">Start, stop, and monitor your bot instances from one place.</p>
+      </header>
+
+      <section id="loginPanel" class="auth-panel">
+        <h2 class="auth-title">Sign In</h2>
+        <form id="loginForm" class="auth-form">
+          <input id="usernameInput" class="auth-input" type="text" placeholder="Username" autocomplete="username" required />
+          <input id="passwordInput" class="auth-input" type="password" placeholder="Password" autocomplete="current-password" required />
+          <button id="loginBtn" class="btn btn-good" type="submit">Login</button>
+        </form>
+        <p id="authState" class="muted">Not signed in</p>
+      </section>
+
+      <section id="toolbar" class="toolbar hidden">
+        <button id="refreshBtn" class="btn">Refresh</button>
+        <button id="startAllBtn" class="btn btn-good">Start All</button>
+        <button id="stopAllBtn" class="btn btn-danger">Stop All</button>
+        <button id="logoutBtn" class="btn">Logout</button>
+        <span id="lastUpdated" class="muted"></span>
+      </section>
+
+      <section id="botsGrid" class="grid"></section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.1.0/bundles/skinview3d.bundle.js"></script>
+    <script src="/dashboard.js"></script>
+  </body>
+</html>

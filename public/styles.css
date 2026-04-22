@@ -1,0 +1,276 @@
+:root {
+  --bg: #f4f1eb;
+  --surface: #fffdf9;
+  --ink: #1c1c1c;
+  --muted: #6a655d;
+  --accent: #0e7c66;
+  --accent-dark: #075243;
+  --danger: #a0171a;
+  --danger-dark: #6a0e10;
+  --warn: #8a6400;
+  --line: #d9d2c8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 20% 0%, #fdf4d6 0%, transparent 30%),
+    linear-gradient(120deg, #f0ece5 0%, #f8f6f1 40%, #ece7dd 100%);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.sub {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.auth-panel {
+  margin-top: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  max-width: 440px;
+}
+
+.auth-title {
+  margin: 0 0 10px;
+}
+
+.auth-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.auth-input {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 180px;
+  flex: 1 1 180px;
+}
+
+.auth-input:focus {
+  outline: 2px solid #8bb9ad;
+  outline-offset: 1px;
+}
+
+.toolbar {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn:hover {
+  border-color: #bcae99;
+}
+
+.btn-good {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent-dark);
+}
+
+.btn-good:hover {
+  background: var(--accent-dark);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger-dark);
+}
+
+.btn-danger:hover {
+  background: var(--danger-dark);
+}
+
+.grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.card-top {
+  display: flex;
+  gap: 12px;
+}
+
+.model-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  border: 1px solid #bda98b;
+  background: radial-gradient(circle at 30% 25%, #fff7e8 0%, #e8d4b5 55%, #c39e6f 100%);
+  overflow: hidden;
+  flex: 0 0 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skin-viewer {
+  width: 64px;
+  height: 64px;
+  font-size: 0.72rem;
+  color: #4b3c2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skin-viewer canvas {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.meta {
+  margin: 8px 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status.online {
+  background: #ddf7ed;
+  color: #0a6048;
+}
+
+.status.reconnecting,
+.status.connecting {
+  background: #ffedc6;
+  color: var(--warn);
+}
+
+.status.stopped {
+  background: #ffe0df;
+  color: #8f1f1f;
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actions .btn {
+  padding: 8px 10px;
+  font-size: 0.85rem;
+}
+
+.log-box {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #faf7f1;
+  padding: 10px;
+}
+
+.log-title {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.log-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 160px;
+  overflow: auto;
+}
+
+.log-list li {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 8px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  padding: 2px 0;
+}
+
+.log-time {
+  color: var(--muted);
+}
+
+.log-msg {
+  color: #3a352e;
+}

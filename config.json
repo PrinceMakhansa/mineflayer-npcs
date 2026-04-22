@@ -1,0 +1,38 @@
+{
+  "host": "bots.oneforall.social",
+  "port": 25565,
+  "botName": "megumi",
+  "botVersion": "1.21.11",
+  "auth": "offline",
+  "followDistance": 80,
+  "guardRadius": 16,
+  "mode": "passive",
+  "alertCooldownSeconds": 300,
+  "authCommandDelaySeconds": 10,
+  "startStaggerSeconds": 10,
+  "apiPort": 3000,
+  "serverCommand": "/server oneforall",
+  "whitelist": [
+    "Pr1nce28"
+  ],
+  "friendlyPlayers": [
+    "pr1nce28",
+    "ultimategamerx",
+    "vamslplays"
+  ],
+  "discordWebhook": "https://discord.com/api/webhooks/1493269138460770328/kG767bXqi8-w_LdnIZoTjy6VHAx1smdWC2Zdhq2hA9fLBLf1jYCUZIR4PdJxX7oDW4Gs",
+  "bots": [
+    {
+      "id": "igris",
+      "botName": "Igris"
+    },
+    {
+      "id": "beru",
+      "botName": "Beru"
+    },
+    {
+      "id": "tusk",
+      "botName": "Tusk"
+    }
+  ]
+}

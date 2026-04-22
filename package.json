@@ -1,0 +1,24 @@
+{
+  "name": "base-guard-bot",
+  "version": "1.0.0",
+  "description": "Mineflayer NPC guard bot for Minecraft SMP",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:all": "node index.js",
+    "start:bot": "node index.js --bot",
+    "bots:list": "node index.js --list",
+    "start:api": "node index.js --api",
+    "start:api:auto": "node index.js --api --api-autostart",
+    "start:portal": "node index.js --api",
+    "dev": "node --no-deprecation --watch index.js"
+  },
+  "dependencies": {
+    "canvas": "^3.2.3",
+    "docx": "^9.6.1",
+    "dotenv": "^16.6.1",
+    "mineflayer": "^4.23.0",
+    "mineflayer-pathfinder": "^2.4.5",
+    "mineflayer-pvp": "^1.3.2"
+  }
+}
