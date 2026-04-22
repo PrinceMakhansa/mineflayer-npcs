@@ -60,8 +60,8 @@ Type these in Minecraft chat (only whitelisted players can use them):
 
 | Command | Description |
 |---|---|
-| `!follow <name>` | Follow a player (defaults to sender if name omitted) |
-| `!stopfollow` | Stop moving and cancel follow |
+| `follow <name>` | Follow a player (defaults to sender if name omitted) |
+| `stopfollow` | Stop moving and cancel follow |
 
 ---
 
