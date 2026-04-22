@@ -13,7 +13,10 @@
   "apiPort": 3000,
   "serverCommand": "/server oneforall",
   "whitelist": [
-    "Pr1nce28"
+    "Pr1nce28",
+    "DhyanCanPlay",
+    "SaiArchit27",
+    "localhost"
   ],
   "friendlyPlayers": [
     "pr1nce28",
