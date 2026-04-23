@@ -110,6 +110,45 @@ function createApiServer({ manager, port = 3000, startAllStaggerMs = 0, adminUse
     }
   }
 
+  function serveVendorFile(res, relativePath, contentType) {
+    const vendorRoot = path.join(__dirname, "..", "node_modules", "skinview3d", "bundles");
+    const normalized = path.normalize(String(relativePath || ""));
+    const candidatePath = path.resolve(vendorRoot, normalized);
+    const allowedPrefix = `${path.resolve(vendorRoot)}${path.sep}`;
+
+    if (!candidatePath.startsWith(allowedPrefix)) {
+      sendJson(res, 400, { error: "Invalid vendor path" });
+      return;
+    }
+
+    serveFile(res, candidatePath, contentType);
+  }
+
+  function serveSkinFile(res, skinRelativePath) {
+    const skinsDir = path.join(publicDir, "skins");
+    const cleaned = String(skinRelativePath || "")
+      .replaceAll("\\", "/")
+      .replace(/^\.\//, "")
+      .replace(/^public\/skins\//i, "")
+      .replace(/^skins\//i, "");
+
+    const normalized = path.normalize(cleaned);
+    const candidatePath = path.resolve(skinsDir, normalized);
+    const allowedPrefix = `${path.resolve(skinsDir)}${path.sep}`;
+
+    if (!candidatePath.startsWith(allowedPrefix)) {
+      sendJson(res, 400, { error: "Invalid skin path" });
+      return;
+    }
+
+    try {
+      const data = fs.readFileSync(candidatePath);
+      res.writeHead(200, { "Content-Type": "image/png" });
+      res.end(data);
+    } catch (_) {
+      sendJson(res, 404, { error: "Skin not found" });
+    }
+  }
   function pruneExpiredSessions() {
     const now = Date.now();
     for (const [sid, info] of sessions.entries()) {
@@ -193,6 +232,16 @@ function createApiServer({ manager, port = 3000, startAllStaggerMs = 0, adminUse
         return;
       }
 
+      if (method === "GET" && pathname === "/vendor/skinview3d.bundle.js") {
+        serveVendorFile(res, "skinview3d.bundle.js", "application/javascript; charset=utf-8");
+        return;
+      }
+
+      if (method === "GET" && pathname.startsWith("/skins/")) {
+        const relativeSkinPath = pathname.slice("/skins/".length);
+        serveSkinFile(res, relativeSkinPath);
+        return;
+      }
       if (method === "POST" && pathname === "/auth/login") {
         const body = await parseBody(req);
         const username = String(body.username || "").trim();

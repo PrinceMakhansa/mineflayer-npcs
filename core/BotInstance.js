@@ -340,6 +340,7 @@ class BotInstance {
     return {
       id: this.id,
       botName: this.config.botName,
+      skinFile: this.config.skinFile || null,
       host: this.config.host,
       port: this.config.port,
       status: this.status,

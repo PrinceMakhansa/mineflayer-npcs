@@ -98,3 +98,22 @@ pm2 stop baseguard     # stop bot
 - In **offline mode**, any username works — no account needed
 - In **online mode**, you need a real Microsoft/Mojang alt account
 - Keep `config.json` private — don't share it publicly
+
+---
+
+## Portal Skins (Offline NPC Friendly)
+Put your skin PNG files in `public/skins/` (64x64 recommended).
+
+Then set `skinFile` for each bot in `config.json`:
+
+```json
+{
+  "bots": [
+    { "id": "igris", "botName": "Igris", "skinFile": "igris.png" },
+    { "id": "beru", "botName": "Beru", "skinFile": "beru.png" }
+  ]
+}
+```
+
+You can also use subfolders, for example `"skinFile": "guild/igris.png"`.
+If `skinFile` is not set, the portal falls back to username-based skin lookup.

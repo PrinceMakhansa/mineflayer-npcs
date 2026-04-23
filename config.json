@@ -28,15 +28,23 @@
   "bots": [
     {
       "id": "igris",
-      "botName": "Igris"
+      "botName": "Igris",
+      "skinFile": "./skins/igris.png"
     },
     {
       "id": "beru",
-      "botName": "Beru"
+      "botName": "Beru",
+      "skinFile": "./skins/beru.png"
     },
     {
       "id": "tusk",
-      "botName": "Tusk"
+      "botName": "Tusk",
+      "skinFile": "./skins/tusk.png"
+    },
+    {
+      "id": "bellion",
+      "botName": "Bellion",
+      "skinFile": "./skins/bellion.png"
     }
   ]
 }

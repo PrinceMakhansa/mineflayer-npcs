@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bot Control Portal</title>
+    <meta name="description" content="Monitor and control your Mineflayer bot instances from a single dashboard." />
+    <title>Bot Portal · Mineflayer Control</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -25,16 +32,16 @@
       </section>
 
       <section id="toolbar" class="toolbar hidden">
-        <button id="refreshBtn" class="btn">Refresh</button>
-        <button id="startAllBtn" class="btn btn-good">Start All</button>
-        <button id="stopAllBtn" class="btn btn-danger">Stop All</button>
+        <button id="refreshBtn" class="btn">⟳ Refresh</button>
+        <button id="startAllBtn" class="btn btn-good">▶ Start All</button>
+        <button id="stopAllBtn" class="btn btn-danger">■ Stop All</button>
         <button id="logoutBtn" class="btn">Logout</button>
         <span id="lastUpdated" class="muted"></span>
       </section>
 
       <section id="botsGrid" class="grid"></section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.1.0/bundles/skinview3d.bundle.js"></script>
+    <script src="/vendor/skinview3d.bundle.js"></script>
     <script src="/dashboard.js"></script>
   </body>
 </html>
